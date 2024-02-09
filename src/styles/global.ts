@@ -8,5 +8,5 @@ export const globalStyles = globalCss({
         fontFamily:'sans-serif'
     },
 
-   
+
 })

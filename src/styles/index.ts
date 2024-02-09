@@ -15,23 +15,26 @@ export const {config,
         },
     
         theme:{
+
             colors:{
                 white: '#fff',
-                gpt_gray: '#343541',
-                gpt_grayHover:'#202123',
+                gpt_gray: '#171717',
+                gpt_grayHover:'#262626',
                 gpt_text:'#343541',
                 purple_dark:"#00002E",
                 purple_regular:'#3C46FF',
                 purpleHover:"#0000FF",
-                gpt_versionHover:'#2f303a'
+                gpt_pink:"#D292FF",
+                gpt_gray_text:'#858585',
             },
     
             fontSizes:{
-                sm:'0.75rem',
+                sm:'0.80rem',
                 md:'1.125rem',
                 lg:'1.25rem',
                 lx:'1.5rem',
                 '2xl':"2rem"
-            }
+            },
+
         }
 })

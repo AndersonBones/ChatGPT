@@ -1,4 +1,5 @@
 import { styled } from "@stitches/react";
+import {Content} from '@radix-ui/react-hover-card'
 
 export const MyChatsContainer = styled('div',{
     width:'22rem',
@@ -28,16 +29,20 @@ export const NewChatTitle = styled('div',{
     fontSize:'$sm'
 })
 
-export const NewChatLogoContainer = styled('div',{
-    width:30,
-    height:30,
-    borderRadius:'50%',
-    backgroundColor:'White'
-})
+
 
 export const NewChatButton = styled('button',{
     cursor:'pointer',
     border:'none',
     backgroundColor:'transparent',
-    color:'White'
+    color:'White',
+
+})
+
+export const HoverCardContent = styled(Content, {
+    fontSize:"$sm",
+    color:'White',
+    backgroundColor:"Black",
+    padding:'0.75rem',
+    borderRadius:'0.5rem',
 })

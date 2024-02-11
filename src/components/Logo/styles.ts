@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from "@/styles/index";
 import { LogoProps } from "./GPTLogo";
 
 export const NewChatLogoContainer = styled('div',{

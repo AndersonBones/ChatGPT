@@ -5,32 +5,55 @@ import {
     ChatGPTContainer,
     ChatGPTHeader, ChatGPTInfo,
     ChatVersion, GPTPrompt, GPTPromptContainer,
+    HideMyChats,
     SendMesage
 } from './styles'
-
-import { ArrowUp, CaretDown } from 'phosphor-react'
+import { FaAngleLeft, FaAngleDown, FaAngleRight } from "react-icons/fa";
+import { ArrowUp } from 'phosphor-react'
 import GPTLogo from '../Logo/GPTLogo';
+import { useContext, useEffect } from 'react';
+import { ChatContext } from '@/contexts/ChatContext';
+import * as HoverCard from '@radix-ui/react-hover-card';
+import HoverContainer from '../HoverCard/HoverContainer';
+import NewChatSecondaryBtn from '../NewChatSecondaryButton';
+import NavBar from '../NavBarButton';
+
 
 
 export default function ChatContainer() {
-    return (
-        <ChatGPTContainer>
-            <ChatGPTHeader>
-                <ChatVersion>ChatGPT 3.5 <CaretDown size={20} /></ChatVersion>
-            </ChatGPTHeader>
 
-            <ChatContent>
-                
+    const { handleSetShowChats, showChatsStatus, showNavBarStatus } = useContext(ChatContext)
+
+
+    return (
+        <ChatGPTContainer >
+
+            {showNavBarStatus ? (
+                <ChatGPTHeader className="navbar" css={{justifyContent:"space-between"}}>
+                    {showNavBarStatus ? (<NavBar />) : ""}
+                    <ChatVersion>ChatGPT 3.5  <FaAngleDown size={20} /></ChatVersion>
+                    {showNavBarStatus ? (<NewChatSecondaryBtn border={false} />) : ""}
+                </ChatGPTHeader>
+            ) : (
+                <ChatGPTHeader >
+                    {!showNavBarStatus && !showChatsStatus ? (<NewChatSecondaryBtn border={true} />) : ""}
+                    <ChatVersion>ChatGPT 3.5  <FaAngleDown size={20} /></ChatVersion>
+                </ChatGPTHeader>
+            )}
+
+
+            <ChatContent className='md:container md:mx-auto'>
+
                 <ChatGPT>
                     <ChatGPTInfo>
-                        <GPTLogo size={50}></GPTLogo>
+                        <GPTLogo size={60}></GPTLogo>
                         <span>Como posso ajudá-lo hoje?</span>
                     </ChatGPTInfo>
-                    
+
                 </ChatGPT>
 
                 <GPTPromptContainer>
-                    <GPTPrompt placeholder='Mensagem ChatGPT...' >
+                    <GPTPrompt rows={1} tabIndex={0} placeholder='Mensagem ChatGPT...' >
 
                     </GPTPrompt>
 
@@ -41,6 +64,15 @@ export default function ChatContainer() {
             </ChatContent>
 
 
+            <HoverContainer
+                content={showChatsStatus ? (<span>Fechar barra lateral</span>) : (<span>Abrir barra lateral</span>)}
+                triggerChild={
+                    <HideMyChats onClick={() => { handleSetShowChats() }}>
+                        {showChatsStatus ? (<FaAngleLeft size={25} />) : (<FaAngleRight size={25} />)}
+
+                    </HideMyChats>
+                }
+            />
 
 
 

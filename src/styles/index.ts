@@ -8,8 +8,8 @@ export const {config,
     createTheme } = createStitches({
         media:{
             sm: '(max-width: 35em) ', // 560px
-            md: '(max-width: 48em) ', // 768px
-            lg: '(max-width: 62em) ', // 992px
+            md: '(max-width: 50em) ', // 768px
+            lg: '(max-width: 72em) ', // 992px
             xl: '(max-width: 80em) ', // 1280px
             '2xl': '(max-width: 96em) ', // 1536px
         },
@@ -25,7 +25,7 @@ export const {config,
                 purple_regular:'#3C46FF',
                 purpleHover:"#0000FF",
                 gpt_pink:"#D292FF",
-                gpt_gray_text:'#858585',
+                gpt_gray_text:'#676767',
             },
     
             fontSizes:{

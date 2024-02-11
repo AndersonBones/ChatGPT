@@ -81,5 +81,12 @@ export const MessageHeroContainer = styled("div",{
     h1:{
         color:'$gpt_pink',
         fontSize:'$2xl',
+        fontWeight:300,
+    },
+
+    span:{
+        fontSize:'2.5rem',
+        fontWeight:700,
     }
+
 })

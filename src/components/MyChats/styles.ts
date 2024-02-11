@@ -1,10 +1,34 @@
-import { styled } from "@stitches/react";
+import { styled } from "@/styles/index";
 import {Content} from '@radix-ui/react-hover-card'
 
 export const MyChatsContainer = styled('div',{
-    width:'22rem',
+    width:0,
+    padding:0,
     backgroundColor:'Black',
-    padding:'1rem'
+    boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+    
+
+
+    '&.showChats':{
+        visibility:'visible',
+        width:'20rem',
+        
+    },
+   
+    transition:'.3s ease'
+})
+
+export const MyChats = styled('div',{
+    backgroundColor:'Black',
+    display:'grid',
+    gridTemplateRows:'3.5rem 1fr',
+    width:'20rem',
+    height:'100%',
+    padding:'1rem',
+})
+
+export const ChatsList = styled('div',{
+   
 })
 
 export const NewChatContainer = styled('div',{
@@ -13,7 +37,7 @@ export const NewChatContainer = styled('div',{
     cursor:'pointer',
     color:'White',
     borderRadius:'0.75rem',
-    padding:'.5rem',
+    padding:'0 .5rem',
 
     '&:hover':{
         backgroundColor:'$gpt_grayHover'
@@ -31,18 +55,10 @@ export const NewChatTitle = styled('div',{
 
 
 
-export const NewChatButton = styled('button',{
+export const NewChatPrimaryButton = styled('button',{
     cursor:'pointer',
     border:'none',
     backgroundColor:'transparent',
     color:'White',
 
-})
-
-export const HoverCardContent = styled(Content, {
-    fontSize:"$sm",
-    color:'White',
-    backgroundColor:"Black",
-    padding:'0.75rem',
-    borderRadius:'0.5rem',
 })

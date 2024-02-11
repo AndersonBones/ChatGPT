@@ -1,4 +1,4 @@
-import { styled } from "@stitches/react";
+import { styled } from "@/styles/index";
 
 export const ChatGPTContainer = styled('main',{
 
@@ -6,9 +6,11 @@ export const ChatGPTContainer = styled('main',{
     display:'flex',
     flexDirection:'column',
 
-
+    position:'relative',
     width:'100%',
     backgroundColor:'$gpt_gray',
+
+
 })
 
 export const ChatGPTHeader = styled('header',{
@@ -16,16 +18,24 @@ export const ChatGPTHeader = styled('header',{
     width:'100%',
     display:'flex',
     alignItems:'center',
+
+    gap:'.75rem',
     
-    borderRadius:'6px',
+
+    '&.navbar':{
+        paddingBottom:'0.5rem',
+        borderBottom:'1px solid $gpt_gray_text'
+    }
   
 })
+
+
 
 export const ChatVersion = styled('button',{
     backgroundColor:"transparent",
     color:"White",
-    padding:'1rem',
-    borderRadius:'0.75rem',
+    padding:'0.5rem',
+    borderRadius:'0.5rem',
     border:"none",
     cursor:'pointer',
     fontWeight:600,
@@ -56,6 +66,13 @@ export const ChatContent = styled('div',{
     display:'flex',
     flexDirection:'column',
     justifyContent:'space-between',
+
+    
+    '@lg': {
+        width:'100%'  
+    },
+
+    
    
 })
 
@@ -65,18 +82,24 @@ export const GPTPromptContainer = styled('div',{
     border:'1px solid $gpt_gray_text',
     borderRadius:'1.125rem',
     overflow:"hidden",
+    alignItems:'center',
+    height:'auto',
 })
 
 export const GPTPrompt = styled('textarea',{
-    
+    display:'flex',
+    alignItems:'center',
+    maxHeight:'20rem',
+    overflowY:'hidden',
     width:'100%',
+    
     resize:'none',
     backgroundColor:'transparent',
     border:'none',
 
     '&::placeholder':{
         fontSize:'$md',
-        margin:'auto',
+       
     },
     color:'White',
     fontSize:'$md',
@@ -98,4 +121,22 @@ export const ChatGPT = styled('div',{
     display:'flex',
     flexDirection:'column',
     justifyContent:'center',
+})
+
+export const HideMyChats = styled('button',{
+    backgroundColor:'transparent',
+    border:'none',
+    color:'$gpt_gray_text',
+    fontWeight:'bord',
+    cursor:'pointer',
+    position:'absolute',
+    
+    bottom:'50%',
+
+    transform:'translate(-50%, 50%)',
+
+    '&:hover':{
+        color:'White',
+        transition:'.3s ease'
+    }
 })

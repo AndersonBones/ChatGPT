@@ -2,7 +2,7 @@
 import { globalStyles } from "@/styles/global";
 import { Container, GetStartedButton, GetStartedButtonContainer, GetStartedContainer, GetStartedTitle, LoginContainer, LoginHeader, LoginHero, LoginTitle, MessageHeroContainer } from "./styles";
 import { FaCircle } from "react-icons/fa";
-import Image from "next/image";
+;
 globalStyles()
 
 
@@ -17,7 +17,8 @@ export default function Login() {
 
                 <MessageHeroContainer>
                     <h1>
-                        Give me ideas for a customer loyalty program in a small bookstore ●
+                        <span>Give me ideas</span> <br /> 
+                        for a customer loyalty program in a small bookstore 
                     </h1>
                 </MessageHeroContainer>
             </LoginHero>

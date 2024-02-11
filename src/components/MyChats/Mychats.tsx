@@ -1,43 +1,47 @@
-import Image from "next/image";
-import { MyChatsContainer, NewChatButton, NewChatContainer, NewChatTitle, HoverCardContent } from "./styles";
-import whiteLogo from '../../assets/ChatGPT.svg'
-import { NotePencil } from "phosphor-react"
-import * as HoverCard from '@radix-ui/react-hover-card';
+
+import { MyChatsContainer, NewChatContainer, NewChatTitle, MyChats, ChatsList, NewChatPrimaryButton } from "./styles";
 import GPTLogo from "../Logo/GPTLogo";
+import { ChatContext } from "@/contexts/ChatContext";
+import { useContext } from "react";
+import HoverContainer from "../HoverCard/HoverContainer";
+import { useRouter } from "next/router";
+import { NotePencil } from "phosphor-react";
 
 
 export default function Mychats() {
+    const { showChatsStatus } = useContext(ChatContext)
+
+    const router = useRouter()
+    const handleNewChat = async()=>{
+        await router.push('/chats')
+        
+    }
     return (
 
-        <MyChatsContainer>
-            <NewChatContainer>
+        <MyChatsContainer className={showChatsStatus ? "showChats" : ""}>
+            <MyChats>
+                <NewChatContainer>
 
-                <NewChatTitle>
-                    <GPTLogo size={30}></GPTLogo>
-                    <span>
-                        New chat
-                    </span>
+                    <NewChatTitle>
+                        <GPTLogo size={30}></GPTLogo>
+                        <span>
+                            New chat
+                        </span>
 
-                </NewChatTitle>
+                    </NewChatTitle>
 
-                
-
-                <HoverCard.Root >
-                    <HoverCard.Trigger asChild>
-                        <NewChatButton><NotePencil size={20} /></NewChatButton>
-                    </HoverCard.Trigger>
-                    <HoverCard.Portal >
+                    <HoverContainer 
+                        content={<span>Novo chat</span>} 
+                        triggerChild={<NewChatPrimaryButton onClick={handleNewChat}><NotePencil size={20} /></NewChatPrimaryButton>}
+                    />
                         
-                        <HoverCardContent className="HoverCardContent" side="right" >
-                            <span>Novo chat</span>
-                           
-                            <HoverCard.Arrow className="HoverCardArrow"/>
-                        </HoverCardContent>
-                    </HoverCard.Portal>
-                </HoverCard.Root>
+                </NewChatContainer>
 
+                <ChatsList>
+                    
+                </ChatsList>
+            </MyChats>
 
-            </NewChatContainer>
         </MyChatsContainer>
 
     )

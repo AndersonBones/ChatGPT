@@ -2,13 +2,16 @@
 
 
 
+import { ChatContextProvider } from "@/contexts/ChatContext";
 import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
  
+    <ChatContextProvider>
+      <Component {...pageProps} />
+    </ChatContextProvider>
     
-    <Component {...pageProps} />
 
     
       

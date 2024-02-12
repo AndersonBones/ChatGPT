@@ -11,7 +11,7 @@ export const MyChatsContainer = styled('div',{
 
     '&.showChats':{
         visibility:'visible',
-        width:'20rem',
+        width:'18rem',
         
     },
    
@@ -22,20 +22,24 @@ export const MyChats = styled('div',{
     backgroundColor:'Black',
     display:'grid',
     gridTemplateRows:'3.5rem 1fr',
-    width:'20rem',
+    width:'18rem',
     height:'100%',
-    padding:'1rem',
+    padding:'.75rem',
 })
 
 export const ChatsList = styled('div',{
    
 })
 
-export const NewChatContainer = styled('div',{
-    display: "flex",
-    justifyContent:'space-between',
+export const NewChatContainerButton = styled('button',{
     cursor:'pointer',
+    border:'none',
+    backgroundColor:'transparent',
     color:'White',
+    display: "flex",
+    alignItems:'center',
+    justifyContent:'space-between',
+
     borderRadius:'0.75rem',
     padding:'0 .5rem',
 
@@ -53,12 +57,3 @@ export const NewChatTitle = styled('div',{
     fontSize:'$sm'
 })
 
-
-
-export const NewChatPrimaryButton = styled('button',{
-    cursor:'pointer',
-    border:'none',
-    backgroundColor:'transparent',
-    color:'White',
-
-})

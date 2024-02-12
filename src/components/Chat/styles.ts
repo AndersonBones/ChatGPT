@@ -76,43 +76,6 @@ export const ChatContent = styled('div',{
    
 })
 
-export const GPTPromptContainer = styled('div',{
-    padding:'0.5rem 0.75rem',
-    display:"flex",
-    border:'1px solid $gpt_gray_text',
-    borderRadius:'1.125rem',
-    overflow:"hidden",
-    alignItems:'center',
-    height:'auto',
-})
-
-export const GPTPrompt = styled('textarea',{
-    display:'flex',
-    alignItems:'center',
-    maxHeight:'20rem',
-    overflowY:'hidden',
-    width:'100%',
-    
-    resize:'none',
-    backgroundColor:'transparent',
-    border:'none',
-
-    '&::placeholder':{
-        fontSize:'$md',
-       
-    },
-    color:'White',
-    fontSize:'$md',
-    outline:'none',
-})
-
-export const SendMesage = styled('button',{
-    borderRadius:'0.75rem',
-    padding:'0.50rem',
-    backgroundColor:'$gpt_grayHover',
-    border:'none',
-    
-})
 
 export const ChatGPT = styled('div',{
     width:'100%',

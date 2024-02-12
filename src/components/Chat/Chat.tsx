@@ -4,9 +4,8 @@ import {
     ChatGPT,
     ChatGPTContainer,
     ChatGPTHeader, ChatGPTInfo,
-    ChatVersion, GPTPrompt, GPTPromptContainer,
+    ChatVersion,
     HideMyChats,
-    SendMesage
 } from './styles'
 import { FaAngleLeft, FaAngleDown, FaAngleRight } from "react-icons/fa";
 import { ArrowUp } from 'phosphor-react'
@@ -17,6 +16,8 @@ import * as HoverCard from '@radix-ui/react-hover-card';
 import HoverContainer from '../HoverCard/HoverContainer';
 import NewChatSecondaryBtn from '../NewChatSecondaryButton';
 import NavBar from '../NavBarButton';
+import Prompt from '../Prompt';
+import PromptContainer from '../Prompt';
 
 
 
@@ -52,15 +53,7 @@ export default function ChatContainer() {
 
                 </ChatGPT>
 
-                <GPTPromptContainer>
-                    <GPTPrompt rows={1} tabIndex={0} placeholder='Mensagem ChatGPT...' >
-
-                    </GPTPrompt>
-
-                    <SendMesage>
-                        <ArrowUp size={20}></ArrowUp>
-                    </SendMesage>
-                </GPTPromptContainer>
+                <PromptContainer/>
             </ChatContent>
 
 

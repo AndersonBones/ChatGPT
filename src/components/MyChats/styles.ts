@@ -4,10 +4,11 @@ import {Content} from '@radix-ui/react-hover-card'
 export const MyChatsContainer = styled('div',{
     width:0,
     padding:0,
+    height:'100vh',
     backgroundColor:'Black',
     boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
     
-
+    visibility:'hidden',
 
     '&.showChats':{
         visibility:'visible',
@@ -19,16 +20,16 @@ export const MyChatsContainer = styled('div',{
 })
 
 export const MyChats = styled('div',{
-    backgroundColor:'Black',
+    backgroundColor:'black',
     display:'grid',
     gridTemplateRows:'3.5rem 1fr',
-    width:'18rem',
+    
     height:'100%',
     padding:'.75rem',
 })
 
 export const ChatsList = styled('div',{
-   
+
 })
 
 export const NewChatContainerButton = styled('button',{

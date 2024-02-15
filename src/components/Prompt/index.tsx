@@ -24,10 +24,10 @@ export default function PromptContainer() {
             if(promptContainer.current){
                 if(textHeight > 320){
                    
-                    promptContainer.current.style.overflowY = 'auto'
+                    textAreaRef.current.style.overflowY = 'auto'
                     
                 }else{
-                    promptContainer.current.style.overflowY = 'hidden'
+                    textAreaRef.current.style.overflowY = 'hidden'
                 }
             }
             

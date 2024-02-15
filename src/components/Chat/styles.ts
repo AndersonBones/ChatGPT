@@ -22,10 +22,7 @@ export const ChatGPTHeader = styled('header',{
     gap:'.75rem',
     
 
-    '&.navbar':{
-        paddingBottom:'0.5rem',
-        borderBottom:'1px solid $gpt_gray_text'
-    }
+
   
 })
 

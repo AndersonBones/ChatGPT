@@ -1,4 +1,4 @@
-import ChatContainer from "@/components/Chat/Chat";
+import ChatContainer from "@/components/Chat";
 import RootLayout from "@/components/Layout/Layout";
 import { globalStyles } from "@/styles/global";
 globalStyles()

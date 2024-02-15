@@ -2,24 +2,31 @@
 import { MyChatsContainer, NewChatTitle, MyChats, ChatsList, NewChatContainerButton } from "./styles";
 import GPTLogo from "../Logo/GPTLogo";
 import { ChatContext } from "@/contexts/ChatContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import HoverContainer from "../HoverCard/HoverContainer";
 import { useRouter } from "next/router";
 import { NotePencil } from "phosphor-react";
 
 
-export default function Mychats() {
-    const { showChatsStatus } = useContext(ChatContext)
+interface MychatsProps{
+    widthInRem:number
+}
+export default function Mychats({widthInRem}:MychatsProps) {
+    const { toggleChats, showNavBarStatus } = useContext(ChatContext)
 
     const router = useRouter()
+
     const handleNewChat = async () => {
         await router.push('/chats')
 
     }
+
+
     return (
 
-        <MyChatsContainer className={showChatsStatus ? "showChats" : ""}>
-            <MyChats>
+        
+        <MyChatsContainer  className={!showNavBarStatus && toggleChats ? "showChats" : ""} >
+            <MyChats css={{width:`${widthInRem}rem`}}>
 
                 <NewChatContainerButton onClick={handleNewChat}>
 
@@ -32,7 +39,7 @@ export default function Mychats() {
                     </NewChatTitle>
 
                     <HoverContainer
-                        content={<span>Novo chat</span>}
+                        content={<span>Novo chat </span>}
                         triggerChild={<NotePencil size={20} />}
                     >
                     </HoverContainer>

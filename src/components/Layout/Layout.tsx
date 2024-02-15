@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
-import Mychats from "../MyChats/Mychats";
+import Mychats from "../MyChats";
 import { Container } from "./styles";
+
 
 interface Props {
     children: ReactNode
@@ -10,7 +11,8 @@ export default function RootLayout({ children }: Props) {
 
     return (
         <Container>
-            <Mychats></Mychats>
+            
+            <Mychats widthInRem={18}></Mychats>
             {children}
         </Container>
     )

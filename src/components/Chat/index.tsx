@@ -8,22 +8,21 @@ import {
     HideMyChats,
 } from './styles'
 import { FaAngleLeft, FaAngleDown, FaAngleRight } from "react-icons/fa";
-import { ArrowUp } from 'phosphor-react'
+
 import GPTLogo from '../Logo/GPTLogo';
 import { useContext, useEffect } from 'react';
 import { ChatContext } from '@/contexts/ChatContext';
-import * as HoverCard from '@radix-ui/react-hover-card';
+
 import HoverContainer from '../HoverCard/HoverContainer';
 import NewChatSecondaryBtn from '../NewChatSecondaryButton';
-import NavBar from '../NavBarButton';
-import Prompt from '../Prompt';
 import PromptContainer from '../Prompt';
+import MyChatsMobile from '../Mobile/MyChats';
 
 
 
 export default function ChatContainer() {
 
-    const { handleSetShowChats, showChatsStatus, showNavBarStatus } = useContext(ChatContext)
+    const { handleToggleShowChats, toggleChats, showNavBarStatus } = useContext(ChatContext)
 
 
     return (
@@ -31,13 +30,13 @@ export default function ChatContainer() {
 
             {showNavBarStatus ? (
                 <ChatGPTHeader className="navbar" css={{justifyContent:"space-between"}}>
-                    {showNavBarStatus ? (<NavBar />) : ""}
+                    {showNavBarStatus? (<MyChatsMobile/>) : ""}
                     <ChatVersion>ChatGPT 3.5  <FaAngleDown size={20} /></ChatVersion>
                     {showNavBarStatus ? (<NewChatSecondaryBtn border={false} />) : ""}
                 </ChatGPTHeader>
             ) : (
                 <ChatGPTHeader >
-                    {!showNavBarStatus && !showChatsStatus ? (<NewChatSecondaryBtn border={true} />) : ""}
+                    {!showNavBarStatus && !toggleChats ? (<NewChatSecondaryBtn border={true} />) : ""}
                     <ChatVersion>ChatGPT 3.5  <FaAngleDown size={20} /></ChatVersion>
                 </ChatGPTHeader>
             )}
@@ -56,16 +55,19 @@ export default function ChatContainer() {
                 <PromptContainer/>
             </ChatContent>
 
-
-            <HoverContainer
-                content={showChatsStatus ? (<span>Fechar barra lateral</span>) : (<span>Abrir barra lateral</span>)}
+            
+            {!showNavBarStatus && (
+                <HoverContainer
+                content={toggleChats ? (<span>Fechar barra lateral</span>) : (<span>Abrir barra lateral</span>)}
                 triggerChild={
-                    <HideMyChats onClick={() => { handleSetShowChats() }}>
-                        {showChatsStatus ? (<FaAngleLeft size={25} />) : (<FaAngleRight size={25} />)}
+                    <HideMyChats onClick={() => { handleToggleShowChats() }}>
+                        {toggleChats ? (<FaAngleLeft size={25} />) : (<FaAngleRight size={25} />)}
 
                     </HideMyChats>
                 }
             />
+            )}
+            
 
 
 

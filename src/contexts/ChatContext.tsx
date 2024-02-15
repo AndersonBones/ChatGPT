@@ -1,49 +1,50 @@
-import { ReactNode, createContext, useEffect, useState } from "react";
 
+import { ReactNode, createContext, useEffect, useState } from "react";
 
 interface ChatContextProps {
     children: ReactNode
 }
 interface ChatProps {
-    handleSetShowChats: () => void,
-    showChatsStatus: boolean,
+    handleToggleShowChats: () => void,
     showNavBarStatus: boolean
+    toggleChats:boolean
 }
 export const ChatContext = createContext({} as ChatProps)
 
 export const ChatContextProvider = ({ children }: ChatContextProps) => {
 
-    const [showChats, setShowChats] = useState(true)
+    // states 
+    const [showNavBar, setShowNavBar] = useState(false)
+    const [toggleChats, setToggleChats] = useState<boolean>(true)
 
-    const handleSetShowChats = () => {
-        setShowChats(current => !current)
+    const handleToggleShowChats = () => {
+        setToggleChats(current =>!current)
     }
 
-    const [showNavBar, setShowNavBar] = useState(false)
-
+    
 
     const mobileVersion = () => {
 
         if (window.innerWidth < 768) {
             setShowNavBar(true)
-            setShowChats(false)
-        } else {
+        } else{
             setShowNavBar(false)
-            setShowChats(true)
         }
+       
     }
 
+ 
     useEffect(() => {
-        
+        mobileVersion()
         window.addEventListener('resize', mobileVersion)
-    }, [showChats, showNavBar])
+    }, [])
 
     return (
         <ChatContext.Provider
             value={{
-                handleSetShowChats: handleSetShowChats,
-                showChatsStatus: showChats,
-                showNavBarStatus: showNavBar
+                handleToggleShowChats,
+                showNavBarStatus: showNavBar,
+                toggleChats
             }}
         >
             {children}

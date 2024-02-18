@@ -45,6 +45,7 @@ export default function ChatContainer({children}:Props) {
 
             {!showNavBarStatus && (
                 <HoverContainer
+                    side='right'
                     content={toggleChats ? (<span>Fechar barra lateral</span>) : (<span>Abrir barra lateral</span>)}
                     triggerChild={
                         <HideMyChats onClick={() => { handleToggleShowChats() }}>

@@ -1,6 +1,6 @@
 import GPTLogo from "../Logo/GPTLogo";
 import PromptContainer from "../Prompt";
-import {ChatContent,ChatGPT, ChatGPTInfo} from './styles'
+import { ChatContent, ChatGPT, ChatGPTInfo } from './styles'
 
 
 export default function ChatConversation() {
@@ -15,7 +15,9 @@ export default function ChatConversation() {
 
             </ChatGPT>
 
+            
             <PromptContainer />
+            
         </ChatContent>
     )
 }

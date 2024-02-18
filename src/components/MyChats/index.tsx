@@ -39,6 +39,7 @@ export default function Mychats({widthInRem}:MychatsProps) {
                     </NewChatTitle>
 
                     <HoverContainer
+                        side="right"
                         content={<span>Novo chat </span>}
                         triggerChild={<NotePencil size={20} />}
                     >

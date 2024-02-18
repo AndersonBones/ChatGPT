@@ -1,5 +1,5 @@
 
-import { MyChatsContainer, NewChatTitle, MyChats, ChatsList, NewChatContainerButton } from "./styles";
+import { MyChatsContainer, NewChatTitle, MyChats, ChatsList, NewChatContainerButton, ChatListItem } from "./styles";
 import GPTLogo from "../Logo/GPTLogo";
 import { ChatContext } from "@/contexts/ChatContext";
 import { useContext, useEffect } from "react";
@@ -12,13 +12,13 @@ interface MychatsProps{
     widthInRem:number
 }
 export default function Mychats({widthInRem}:MychatsProps) {
-    const { toggleChats, showNavBarStatus } = useContext(ChatContext)
+    const { toggleChats, showNavBarStatus, handleSetHome, chats } = useContext(ChatContext)
 
     const router = useRouter()
 
     const handleNewChat = async () => {
-        await router.push('/chats')
-
+        await router.push('/chat')
+        handleSetHome(true)
     }
 
 
@@ -48,6 +48,13 @@ export default function Mychats({widthInRem}:MychatsProps) {
 
 
                 <ChatsList>
+                    {chats.map(chat=>{
+                        return (
+                            <ChatListItem key={chat.chatId} onClick={async ()=>{await router.push(`/chat/${chat.chatId}`)}}>
+                                {chat.input}
+                            </ChatListItem>
+                        )
+                    })}
 
                 </ChatsList>
             </MyChats>

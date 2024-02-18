@@ -2,7 +2,7 @@ import { styled } from "@/styles";
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 
 
-export const GPTPromptContainer = styled('div',{
+export const GPTPromptContainer = styled('form',{
     padding:'0.5rem 0.75rem',
     display:"flex",
 

@@ -18,7 +18,7 @@ export const {config,
 
             colors:{
                 white: '#fff',
-                gpt_gray: '#171717',
+                gpt_gray: '#212121',
                 gpt_grayHover:'#262626',
                 gpt_text:'#343541',
                 purple_dark:"#00002E",
@@ -26,6 +26,7 @@ export const {config,
                 purpleHover:"#0000FF",
                 gpt_pink:"#D292FF",
                 gpt_gray_text:'#676767',
+                gpt_dark_gray:'#171717',
             },
     
             fontSizes:{

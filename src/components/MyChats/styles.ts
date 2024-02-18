@@ -1,5 +1,5 @@
 import { styled } from "@/styles/index";
-import {Content} from '@radix-ui/react-hover-card'
+
 
 export const MyChatsContainer = styled('div',{
     width:0,
@@ -8,7 +8,7 @@ export const MyChatsContainer = styled('div',{
     backgroundColor:'Black',
     boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
     
-    visibility:'hidden',
+    
 
     '&.showChats':{
         visibility:'visible',
@@ -20,16 +20,34 @@ export const MyChatsContainer = styled('div',{
 })
 
 export const MyChats = styled('div',{
-    backgroundColor:'black',
+    backgroundColor:'$gpt_dark_gray',
     display:'grid',
     gridTemplateRows:'3.5rem 1fr',
     
     height:'100%',
     padding:'.75rem',
+    gap:'1rem',
 })
 
 export const ChatsList = styled('div',{
+    display:'flex',
+    flexDirection:'column',
+    color:'$white',
+    gap:'.5rem'
+})
 
+export const ChatListItem = styled('button',{
+    borderRadius:'0.75rem',
+    padding:'.75rem',
+    fontSize:'$sm',
+    cursor:'pointer',
+    border:'none',
+    backgroundColor:'transparent',
+    '&:hover':{
+        backgroundColor:'$gpt_grayHover'
+    },
+    color:'$white',
+    textAlign:'start'
 })
 
 export const NewChatContainerButton = styled('button',{

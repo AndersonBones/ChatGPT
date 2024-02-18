@@ -1,13 +1,13 @@
+import ChatConversation from "@/components/ChaConversation/index.page";
 import ChatContainer from "@/components/Chat";
 import RootLayout from "@/components/Layout/Layout";
-import { globalStyles } from "@/styles/global";
-globalStyles()
+
 
 export default function Chats(){
     return (
         
         <RootLayout>
-            <ChatContainer></ChatContainer>
+            <ChatConversation></ChatConversation>
         </RootLayout>
         
 

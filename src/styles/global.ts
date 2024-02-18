@@ -9,6 +9,10 @@ export const globalStyles = globalCss({
 
         scrollbarColor: '#676767 transparent',
         
+    },
+
+    body:{
+        backgroundColor:"$gpt_gray"
     }
 
 })

@@ -15,6 +15,7 @@ import HoverContainer from '../HoverCard/HoverContainer';
 import NewChatSecondaryBtn from '../NewChatSecondaryButton';
 
 import MyChatsMobile from '../Mobile/MyChats';
+import PromptContainer from '../Prompt';
 
 
 interface Props {
@@ -59,6 +60,7 @@ export default function ChatContainer({children}:Props) {
            
             {children}
             
+            <PromptContainer /> 
             
         </ChatGPTContainer>
     )

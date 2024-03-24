@@ -8,15 +8,13 @@ export const MyChatsContainer = styled('div',{
     backgroundColor:'Black',
     boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
     
-    
-
+    transition:'.3s ease',
     '&.showChats':{
         visibility:'visible',
         width:'18rem',
         
     },
-   
-    transition:'.3s ease'
+    
 })
 
 export const MyChats = styled('div',{
@@ -33,26 +31,70 @@ export const ChatsList = styled('div',{
     display:'flex',
     flexDirection:'column',
     color:'$white',
-    gap:'.5rem'
+    gap:'.5rem',
+    overflowY:'auto',
+
 })
 
-export const ChatListItem = styled('button',{
-    borderRadius:'0.75rem',
-    padding:'.75rem',
+export const ChatItemContainer = styled('div',{
+    display:"grid",
+    gridTemplateColumns:'80% 20%',
+    alignItems:'center',
+    padding:'.5rem',
     fontSize:'$sm',
-    cursor:'pointer',
+    
     border:'none',
+    borderRadius:'0.75rem',
+    cursor:'pointer',
+    gap:'.5rem',
+
     backgroundColor:'transparent',
     '&:hover':{
         backgroundColor:'$gpt_grayHover'
     },
+
+    button:{
+        cursor:'pointer',
+        border:'none',
+        color:'$gpt_gray_text',
+        fontSize:'$md',
+        backgroundColor:'transparent',
+        transition:'.2s ease',
+        '&:hover':{
+            color:'$white',
+            
+        },
+    },
+
+    
+})
+
+export const ChatActions = styled('div',{
+    display:'flex',
+    gap:'.5rem',
+    alignItems:'center',
+  
+
+    button:{
+        display:'flex',
+        justifyContent:'center'
+    }
+})
+export const ChatTitle = styled('span',{
     color:'$white',
-    textAlign:'start'
+    overflow:'hidden'
+})
+
+export const EditChat = styled('button',{
+    
+})
+export const DeleteChat = styled('button',{
+    
 })
 
 export const NewChatContainerButton = styled('button',{
     cursor:'pointer',
-    border:'none',
+    border:'.2rem solid $gpt_grayHover',
     backgroundColor:'transparent',
     color:'White',
     display: "flex",
@@ -76,3 +118,37 @@ export const NewChatTitle = styled('div',{
     fontSize:'$sm'
 })
 
+export const FooterChatList = styled('div',{
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'space-between',
+    padding:'.5rem',
+    border:'.2rem solid $gpt_grayHover',
+    borderRadius:'0.75rem',
+})
+
+export const UserProfile = styled('div',{
+    display:'flex',
+    alignItems:'center',
+    gap:'.8rem',
+    
+
+    span:{
+        color:'white',
+    }
+})
+
+export const Logout = styled('div', {
+    color:'white',
+    cursor:'pointer',
+})
+
+export const UserLogoContainer = styled("div",{
+    width:'2rem',
+    height:'2rem',
+
+    img:{
+        width:"100%",
+        height:'100%'
+    },
+})

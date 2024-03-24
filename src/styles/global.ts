@@ -12,7 +12,8 @@ export const globalStyles = globalCss({
     },
 
     body:{
-        backgroundColor:"$gpt_gray"
+        backgroundColor:"$gpt_gray",
+    
     }
 
 })

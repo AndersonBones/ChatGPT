@@ -3,10 +3,8 @@ import { LogoProps } from "./GPTLogo";
 
 export const NewChatLogoContainer = styled('div',{
    
-    width:30,
-    height:30,
     borderRadius:'50%',
-    backgroundColor:'White',
+ 
     
 
     img:{

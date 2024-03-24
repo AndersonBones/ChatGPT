@@ -1,6 +1,6 @@
 import * as HoverCard from '@radix-ui/react-hover-card';
 import { ReactNode } from 'react';
-import { HoverCardContent } from './styles';
+import { HoverCardContent, HoverCardPortal } from './styles';
 
 interface HoverCardProps{
     triggerChild:ReactNode,
@@ -12,13 +12,15 @@ export default function HoverContainer({content, triggerChild, side}:HoverCardPr
         <HoverCard.Root openDelay={0} closeDelay={0}>
             <HoverCard.Trigger asChild >
                 {triggerChild}
+            
+                
             </HoverCard.Trigger>
-            <HoverCard.Portal>
+            <HoverCardPortal >
                 <HoverCardContent className="HoverCardContent" side={side} sideOffset={0}>
                     {content}
                     <HoverCard.Arrow className="HoverCardArrow" />
                 </HoverCardContent>
-            </HoverCard.Portal>
+            </HoverCardPortal>
         </HoverCard.Root>
     )
 }

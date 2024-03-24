@@ -1,4 +1,4 @@
-import ChatConversation from "@/components/ChaConversation/index.page";
+import ChatConversation from "@/components/ChatConversation/index.page";
 import ChatContainer from "@/components/Chat";
 import RootLayout from "@/components/Layout/Layout";
 

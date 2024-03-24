@@ -1,18 +1,19 @@
 
-import { MyChatsContainer, NewChatTitle, MyChats, ChatsList, NewChatContainerButton, ChatListItem } from "./styles";
+import { MyChatsContainer, NewChatTitle, MyChats, ChatsList, NewChatContainerButton, ChatItemContainer, ChatTitle, EditChat, DeleteChat, ChatActions, FooterChatList, UserProfile, Logout, UserLogoContainer } from "./styles";
 import GPTLogo from "../Logo/GPTLogo";
 import { ChatContext } from "@/contexts/ChatContext";
 import { useContext, useEffect } from "react";
 import HoverContainer from "../HoverCard/HoverContainer";
 import { useRouter } from "next/router";
-import { NotePencil } from "phosphor-react";
+import { NotePencil, PencilSimple, SignOut, Trash } from "phosphor-react";
+import logo from '../../assets/user.png'
+import Image from "next/image";
 
-
-interface MychatsProps{
-    widthInRem:number
+interface MychatsProps {
+    widthInRem: number
 }
-export default function Mychats({widthInRem}:MychatsProps) {
-    const { toggleChats, showNavBarStatus, handleSetHome, chats } = useContext(ChatContext)
+export default function Mychats({ widthInRem }: MychatsProps) {
+    const { toggleChats, showNavBarStatus, handleSetHome, chats, handleRemoveChat } = useContext(ChatContext)
 
     const router = useRouter()
 
@@ -24,14 +25,14 @@ export default function Mychats({widthInRem}:MychatsProps) {
 
     return (
 
-        
-        <MyChatsContainer  className={!showNavBarStatus && toggleChats ? "showChats" : ""} >
-            <MyChats css={{width:`${widthInRem}rem`}}>
+
+        <MyChatsContainer className={!showNavBarStatus && toggleChats ? "showChats" : ""} >
+            <MyChats css={{ width: `${widthInRem}rem`}}>
 
                 <NewChatContainerButton onClick={handleNewChat}>
 
                     <NewChatTitle>
-                        <GPTLogo size={30}></GPTLogo>
+                        <GPTLogo size={2} background="$green"></GPTLogo>
                         <span>
                             New chat
                         </span>
@@ -49,15 +50,67 @@ export default function Mychats({widthInRem}:MychatsProps) {
 
 
                 <ChatsList>
-                    {chats.map(chat=>{
+                    {chats.map((chat) => {
                         return (
-                            <ChatListItem key={chat.chatId} onClick={async ()=>{await router.push(`/chat/${chat.chatId}`)}}>
-                                {chat.input}
-                            </ChatListItem>
+
+                            <ChatItemContainer 
+                                onClick={async () => { 
+                                    await router.push(`/chat/${chat.chatId}`)
+                                    handleSetHome(false)
+                                }}
+
+                                key={chat.chatId}
+                                >
+                                <ChatTitle >
+
+                                    {!chat.messages[0].content && (
+                                        chat.messages[0].content.substring(0, 30)+'...'
+                                    )}
+
+                                    {chat.messages[0].content && (
+                                        chat.messages[0].content.substring(0, 30)+'...'
+                                    )}
+
+                                </ChatTitle>
+
+                                <ChatActions>
+                                    <EditChat>
+                                        <PencilSimple />
+                                    </EditChat>
+
+                                    <DeleteChat onClick={()=> handleRemoveChat(chat.chatId as string)}>
+                                        <Trash />
+                                    </DeleteChat>
+                                </ChatActions>
+
+
+                            </ChatItemContainer>
+
                         )
                     })}
 
                 </ChatsList>
+
+                <FooterChatList>
+
+                    <UserProfile>
+                        <UserLogoContainer>
+                            <Image src={logo} alt="User Logo" />
+                        </UserLogoContainer>
+                        <span>Anderson Bones</span>
+                    </UserProfile>
+
+                    <HoverContainer content="Log out" triggerChild={
+                        <Logout>
+                            <SignOut size={20}/>
+                        </Logout>
+                    }
+                    side="right"
+                    >
+
+                    </HoverContainer>
+                    
+                </FooterChatList>
             </MyChats>
 
         </MyChatsContainer>

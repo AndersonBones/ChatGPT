@@ -1,29 +1,30 @@
 import { styled } from "@/styles/index";
 
 export const ChatGPTContainer = styled('main',{
-
-    padding:'1rem',
+    
+    
     display:'flex',
     flexDirection:'column',
-
     position:'relative',
     width:'100%',
+    
+    paddingLeft:'1rem',
     backgroundColor:'$gpt_gray',
-
-
+    
+ 
 })
 
 export const ChatGPTHeader = styled('header',{
-
+  
     width:'100%',
+    height:'4rem',
+
+
     display:'flex',
     alignItems:'center',
-
     gap:'.75rem',
-    
 
 
-  
 })
 
 
@@ -47,6 +48,7 @@ export const ChatVersion = styled('button',{
 
 export const HideMyChats = styled('button',{
     backgroundColor:'transparent',
+   
     border:'none',
     color:'$gpt_gray_text',
     fontWeight:'bord',
@@ -56,9 +58,9 @@ export const HideMyChats = styled('button',{
     bottom:'50%',
 
     transform:'translate(-50%, 50%)',
-
+    transition:'.2s ease',
     '&:hover':{
         color:'White',
-        transition:'.3s ease'
+        
     }
 })

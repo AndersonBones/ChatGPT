@@ -1,4 +1,4 @@
-import ChatConversation from "@/components/ChaConversation/index.page";
+import ChatConversation from "@/components/ChatConversation/index.page";
 import ChatContainer from "@/components/Chat";
 import RootLayout from "@/components/Layout/Layout";
 import { ChatContext } from "@/contexts/ChatContext";
@@ -9,6 +9,7 @@ export default function ChatID(){
     useEffect(()=>{
         handleSetHome(false)
     },[])
+    
     return(
         <RootLayout>
             <ChatConversation></ChatConversation>

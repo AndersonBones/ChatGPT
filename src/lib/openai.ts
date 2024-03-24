@@ -4,7 +4,7 @@ import { Message } from '@/contexts/ChatContext'
 
 const openaiConfig = new openAI({
     organization:"org-yAZfagseFNu0nyW0TXxBpbtm",
-    apiKey:'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',
+    apiKey:'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',
     dangerouslyAllowBrowser:true,
 })
 

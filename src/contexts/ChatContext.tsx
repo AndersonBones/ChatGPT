@@ -81,6 +81,7 @@ export const ChatContextProvider = ({ children }: ChatContextProps) => {
         })
 
         setChats(newChats)
+     
     }
 
     // add message

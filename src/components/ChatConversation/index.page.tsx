@@ -63,9 +63,35 @@ export default function ChatConversation() {
                                 )}
 
 
-                
+
 
                                 {chat.author == "assistant" && (
+                                    <OutputMessageContainer key={uuidv4()} >
+
+                                        <MessageHeader>
+                                            <MessageLogo>
+                                                <GPTLogo size={1.5} background="$green"></GPTLogo>
+                                            </MessageLogo>
+
+                                            <MessageName>
+                                                <strong>ChatGPT</strong>
+                                            </MessageName>
+                                        </MessageHeader>
+
+
+                                        <MessageBody >
+
+                                            <OutputGPT>
+                                                {chat.content as string}
+
+                                            </OutputGPT>
+
+                                        </MessageBody>
+
+                                    </OutputMessageContainer>
+                                )}
+
+                                {chat.author == "error" && (
                                     <OutputMessageContainer key={uuidv4()} >
 
                                         <MessageHeader>

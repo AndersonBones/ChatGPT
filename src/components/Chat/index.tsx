@@ -18,6 +18,7 @@ import MyChatsMobile from '../Mobile/MyChats';
 import PromptContainer from '../Prompt';
 
 
+
 interface Props {
     children: ReactNode
 }
@@ -26,7 +27,7 @@ export default function ChatContainer({children}:Props) {
 
     const { handleToggleShowChats, toggleChats, showNavBarStatus } = useContext(ChatContext)
 
-
+    
     return (
         <ChatGPTContainer >
 

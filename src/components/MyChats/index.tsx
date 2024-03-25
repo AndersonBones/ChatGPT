@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import { NotePencil, PencilSimple, SignOut, Trash } from "phosphor-react";
 import logo from '../../assets/user.png'
 import Image from "next/image";
+import { useNavigate } from 'react-router-dom';
+
 
 interface MychatsProps {
     widthInRem: number
@@ -19,9 +21,11 @@ export default function Mychats({ widthInRem }: MychatsProps) {
 
     const handleNewChat = async () => {
         await router.push('/chat')
+        
         handleSetHome(true)
     }
 
+   
 
     return (
 
@@ -34,7 +38,7 @@ export default function Mychats({ widthInRem }: MychatsProps) {
                     <NewChatTitle>
                         <GPTLogo size={2} background="$green"></GPTLogo>
                         <span>
-                            New chat
+                            Nova conversa
                         </span>
 
                     </NewChatTitle>

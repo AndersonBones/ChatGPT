@@ -4,6 +4,7 @@ export const Container = styled('section',{
     backgroundColor:'$white',
     display:'flex',
     flexDirection:'column',
+    justifyContent:'center',
     alignItems:'center',
     width:'100%',
     height:'100vh',
@@ -20,9 +21,7 @@ export const Container = styled('section',{
 })
 
 export const AuthHeader = styled('div',{
-    padding:'1rem 0',
-    marginTop:'1.5rem',
-    marginBottom:'8rem',
+    padding:'1rem 0',    
 })
 
 export const AuthContainer = styled('div',{

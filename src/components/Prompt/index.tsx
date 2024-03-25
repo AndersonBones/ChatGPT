@@ -142,7 +142,7 @@ export default function PromptContainer() {
             </GPTPromptForm>
 
             <Disclaim>
-                ChatGPT can make mistakes. Consider checking important information.
+                ChatGPT pode cometer erros. Considere verificar informações importantes.
             </Disclaim>
         </GPTPromptContainer>
 

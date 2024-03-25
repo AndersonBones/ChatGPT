@@ -51,7 +51,7 @@ export default function ChatConversation() {
                                             </MessageLogo>
 
                                             <MessageName>
-                                                <strong>You</strong>
+                                                <strong>Você</strong>
                                             </MessageName>
                                         </MessageHeader>
 

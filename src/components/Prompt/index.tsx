@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form"
 import { v4 as uuidv4 } from 'uuid';
 import { useRouter } from "next/router";
 import HoverContainer from "../HoverCard/HoverContainer";
-import { openai } from "@/lib/openai";
+import { openai } from "@/util/openai";
 
 
 

@@ -11,14 +11,14 @@ globalStyles()
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
- 
+
     <ChatContextProvider>
       <Component {...pageProps} />
     </ChatContextProvider>
-    
 
-    
-      
+
+
+
   )
-  
+
 }

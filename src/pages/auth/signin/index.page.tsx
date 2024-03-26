@@ -10,6 +10,11 @@ import { Message} from 'primereact/message';
 import { OpenAiBirthDay, OpenAiName, OpenAiPasswordConfirmation } from "./styles";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
+
+import { NextRequest } from "next/server";
+import { api } from "@/util/axios";
+import { User } from "@/models/users";
+import { useRouter } from "next/router";
     
 globalStyles()
 
@@ -33,10 +38,27 @@ type SigninForm = z.infer<typeof signinFormSchema>
 export default function Signin() {
     
     const {register, handleSubmit, formState:{errors}} = useForm<SigninForm>()
-    
+    const router = useRouter()
 
-    const handleSignin = (data:SigninForm)=>{
-        console.log(data)
+    const handleSignin = async (data:SigninForm)=>{
+        try {
+            const response = await api.get('/connectMongo')
+            
+            if(response.data){
+                const newUser = await api.post('/register',{
+                    name:data.name,
+                    email:data.email,
+                    birthday:data.birthday,
+                    password:data.password
+                })
+
+
+                await router.push('/chat')
+            }
+        
+        } catch (error) {
+            console.log(error)
+        }
         
     }
     

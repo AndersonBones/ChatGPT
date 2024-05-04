@@ -7,7 +7,7 @@ interface IUser{
     birthday:string
 }
 
-const UserSchema = new Schema<IUser>(
+const UserSchema = new Schema(
     {
         birthday:String,
         email:String,
@@ -17,14 +17,8 @@ const UserSchema = new Schema<IUser>(
 
     {
         timestamps: true,
-        toJSON: {
-            versionKey: false,
-            virtuals: true,
-            transform: (_, ret) => {
-                delete ret._id;
-            },
-        },
+        
     },
 )
 
-export const User = models.user = model('user', UserSchema)
+export const User = models.user || model('user', UserSchema)

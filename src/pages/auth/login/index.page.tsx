@@ -7,6 +7,9 @@ import Image from "next/image";
 import {useForm} from 'react-hook-form'
 import {z} from 'zod'
 import { useRouter } from "next/router";
+import { api } from "@/utils/axios";
+import { signIn, useSession } from "next-auth/react";
+
 
 
 const loginFormSchema = z.object({
@@ -27,11 +30,29 @@ export default function Login() {
 
     const {register, handleSubmit, formState:{errors}} = useForm<LoginForm>()
     const router = useRouter()
-
+    const session = useSession()
    
-    const handleLogin = (data:LoginForm)=>{
-        if(data){
-            router.push('/chat')
+    const handleLogin = async (data:LoginForm)=>{
+        try {
+            if(data){
+                const result = await signIn('credentials',{
+                    email:data.email,
+                    password:data.password,
+                    callbackUrl:"/chat",
+                    redirect:true
+                })
+
+            
+                if(result?.error){
+                    console.log(result)
+                    return
+                }
+
+               
+                router.replace("/chat")
+            }
+        } catch (error:any) {
+            alert(error.response.data.message)
         }
     }   
     return (

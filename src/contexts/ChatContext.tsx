@@ -1,6 +1,6 @@
 
 import { ChatSchemaData } from "@/components/Prompt";
-import {  openai } from "@/util/openai";
+import {  openai } from "@/utils/openai";
 import { useRouter } from "next/router";
 
 import { ChatCompletionMessage } from "openai/resources/chat/index.mjs";

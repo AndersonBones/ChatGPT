@@ -1,11 +1,11 @@
 
-import { MyChatsContainer, NewChatTitle, MyChats, ChatsList, NewChatContainerButton, ChatItemContainer, ChatTitle, EditChat, DeleteChat, ChatActions, FooterChatList, UserProfile, Logout, UserLogoContainer } from "./styles";
+import { MyChatsContainer, NewChatTitle, MyChats, ChatsList, NewChatContainerButton, ChatItemContainer, ChatTitle, EditChat, DeleteChat, ChatActions, FooterChatList, UserProfile, Logout } from "./styles";
 import GPTLogo from "../Logo/GPTLogo";
 import { ChatContext } from "@/contexts/ChatContext";
 import { useContext, useEffect } from "react";
 import HoverContainer from "../HoverCard/HoverContainer";
 import { useRouter } from "next/router";
-import { NotePencil, PencilSimple, SignOut, Trash } from "phosphor-react";
+import { NotePencil, PencilSimple, SignOut, Trash, Sparkle } from "phosphor-react";
 import logo from '../../assets/user.png'
 import Image from "next/image";
 import { useNavigate } from 'react-router-dom';
@@ -98,10 +98,10 @@ export default function Mychats({ widthInRem }: MychatsProps) {
                 <FooterChatList>
 
                     <UserProfile>
-                        <UserLogoContainer>
-                            <Image src={logo} alt="User Logo" />
-                        </UserLogoContainer>
-                        <span>Anderson Bones</span>
+                        
+                        <Sparkle color="white" size={25}></Sparkle>
+                        
+                        <span>Upgrade plan</span>
                     </UserProfile>
 
                     <HoverContainer content="Log out" triggerChild={

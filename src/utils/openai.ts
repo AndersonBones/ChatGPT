@@ -3,8 +3,8 @@ import { api } from './axios'
 import { Message } from '@/contexts/ChatContext'
 
 const openaiConfig = new openAI({
-    organization:"org-yAZfagseFNu0nyW0TXxBpbtm",
-    apiKey:'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',
+    organization:"org-9QUcFqhe0Tt9IMKiLkG2PrSH",
+    apiKey:'sk-proj-NQrZg910BQit5q8GqHE1T3BlbkFJqIxxXKrxkIbTDXNosImJ',
     dangerouslyAllowBrowser:true,
 })
 
@@ -34,8 +34,9 @@ export const openai = {
             
             return choices[0].message 
         } catch (error) {
+            console.log(error)
             return {
-                content:"Estamos com problemas para responder...",
+                content:"Seu limite expirou. atualize seu plano.",
                 role:"error"
             }
         }

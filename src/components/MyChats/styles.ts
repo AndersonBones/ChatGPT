@@ -130,6 +130,7 @@ export const FooterChatList = styled('div',{
 export const UserProfile = styled('div',{
     display:'flex',
     alignItems:'center',
+
     gap:'.8rem',
     
 
@@ -143,12 +144,3 @@ export const Logout = styled('div', {
     cursor:'pointer',
 })
 
-export const UserLogoContainer = styled("div",{
-    width:'2rem',
-    height:'2rem',
-
-    img:{
-        width:"100%",
-        height:'100%'
-    },
-})
